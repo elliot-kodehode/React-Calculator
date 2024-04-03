@@ -3,24 +3,13 @@
 import Header from "./Header.jsx";
 import Display from "./Display.jsx";
 import Button from "./Button.jsx";
-import { useEffect, useState } from "react";
-import {
-  atan2,
-  chain,
-  derivative,
-  e,
-  evaluate,
-  log,
-  pi,
-  pow,
-  round,
-  sqrt,
-} from "mathjs";
+import { useState } from "react";
+import { evaluate } from "mathjs";
 
 export default function Calc() {
   const [currentCalc, setCurrentCalc] = useState(``);
   const [result, setResult] = useState(``);
-  const operators = ["+", "-", "/", "=", "*"];
+  const operators = ["+", "-", "/", "=", "*", "."];
 
   const handleChange = (value) => {
     
@@ -29,27 +18,51 @@ export default function Calc() {
       setResult("");
       
     } else if (value === "DEL") {
-      setCurrentCalc(currentCalc.slice(0, -1));
+      setCurrentCalc(currentCalc.trim().slice(0, -1).trim());
+      // removes result if the equation ends on an operator or is empty
       if (
-          currentCalc.slice(0, -1).endsWith("+") || 
-          currentCalc.slice(0, -1).endsWith("*") || 
-          currentCalc.slice(0, -1).endsWith("-") || 
-          currentCalc.slice(0, -1).endsWith("/")) {
-        setResult("")
+        currentCalc.slice(0, -1).endsWith("+") || 
+        currentCalc.slice(0, -1).endsWith("*") || 
+        currentCalc.slice(0, -1).endsWith("-") || 
+        currentCalc.slice(0, -1).endsWith("/") ||
+        currentCalc.slice(0, -1).endsWith(" ") ||
+        currentCalc.slice(0, -1) === ""
+        ) {
+          setResult("")
       } else {setResult(evaluate(currentCalc.slice(0, -1)))}
-      // setResult(operators.includes(currentCalc.charAt(currentCalc.length)) ? `` : evaluate(currentCalc.slice(0, -1)));
-      console.log(currentCalc.slice(0, -1));
+
+    } else if (value === "=") {
+      if (
+        currentCalc.endsWith("+") || 
+        currentCalc.endsWith("*") || 
+        currentCalc.endsWith("-") || 
+        currentCalc.endsWith("/") ||
+        currentCalc.endsWith(".")
+        ) {
+          setCurrentCalc(currentCalc)
+          setResult(result)
+        } else {
+          setCurrentCalc(result)
+          setResult("")
+        }
 
     } else {
       // Changes result to blank if an operator is added, and adds it with spacing to the calc
-      if (
-        operators.includes(value) 
-        // && !operators.includes(currentCalc.slice(-1)) 
-        //to fix when i have space betweeen operators later
-      ) {
-        setCurrentCalc(currentCalc + value);
-        setResult("");
+      if (operators.includes(value)) {
+        if (currentCalc === "" ||
+        currentCalc.endsWith("+") || 
+        currentCalc.endsWith("*") || 
+        currentCalc.endsWith("-") || 
+        currentCalc.endsWith("/") ||
+        currentCalc.endsWith(".") 
+        ) {
+          setCurrentCalc(currentCalc)
+        } else {
+          setCurrentCalc(currentCalc + value);
+          setResult("");
+        }
 
+        // Adds number or operator if there isn't an operator before
       } else {
         setCurrentCalc(currentCalc + value);
         setResult(evaluate(currentCalc + value));

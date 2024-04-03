@@ -7,18 +7,12 @@ import { useState } from "react";
 export default function Display({ currentCalc, result }) {
   return (
     <div className={styles.display}>
-      <input
-        type="text"
+      <h4
         className={styles.currentCalc}
-        value={currentCalc}
-        readOnly
-      ></input>
-      <input
-        type="text"
+      >{currentCalc}</h4>
+      <h3
         className={styles.currentResult}
-        value={result}
-        readOnly
-      ></input>
+      >{result}</h3>
     </div>
   );
 }

@@ -2,3 +2,8 @@
     font-family: "Roboto Light", sans-serif;
     background-color: #40405f;
 }
+
+App {
+    display: flex;
+    gap: 20px;
+}
