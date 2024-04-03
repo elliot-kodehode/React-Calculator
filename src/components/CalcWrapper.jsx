@@ -20,7 +20,7 @@ import {
 export default function Calc() {
   const [currentCalc, setCurrentCalc] = useState(``);
   const [result, setResult] = useState(``);
-  const operators = ["+", "-", "/", "=", "×"];
+  const operators = ["+", "-", "/", "=", "*"];
 
   const handleChange = (value) => {
     
@@ -30,7 +30,11 @@ export default function Calc() {
       
     } else if (value === "DEL") {
       setCurrentCalc(currentCalc.slice(0, -1));
-      if (operators.includes(currentCalc.charAt(currentCalc.length - 1))) {
+      if (
+          currentCalc.slice(0, -1).endsWith("+") || 
+          currentCalc.slice(0, -1).endsWith("*") || 
+          currentCalc.slice(0, -1).endsWith("-") || 
+          currentCalc.slice(0, -1).endsWith("/")) {
         setResult("")
       } else {setResult(evaluate(currentCalc.slice(0, -1)))}
       // setResult(operators.includes(currentCalc.charAt(currentCalc.length)) ? `` : evaluate(currentCalc.slice(0, -1)));
