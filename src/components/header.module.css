@@ -5,6 +5,8 @@
 }
 h1 {
     font-size: 20px;
+    color: white;
+    padding-bottom: 8px;
 }
 
 .themeWrapper {

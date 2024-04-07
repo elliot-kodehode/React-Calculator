@@ -9,7 +9,7 @@ import { evaluate } from "mathjs";
 export default function Calc() {
   const [currentCalc, setCurrentCalc] = useState(``);
   const [result, setResult] = useState(``);
-  const operators = ["+", "-", "/", "=", "*", "."];
+  const operators = ["+", "-", "/", "=", "*"];
 
   const handleChange = (value) => {
     
@@ -36,8 +36,8 @@ export default function Calc() {
         currentCalc.endsWith("+") || 
         currentCalc.endsWith("*") || 
         currentCalc.endsWith("-") || 
-        currentCalc.endsWith("/") ||
-        currentCalc.endsWith(".")
+        currentCalc.endsWith("/") 
+        // currentCalc.endsWith(".")
         ) {
           setCurrentCalc(currentCalc)
           setResult(result)

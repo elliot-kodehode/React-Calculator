@@ -1,9 +1,16 @@
 * {
     font-family: "Roboto Light", sans-serif;
     background-color: #40405f;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-App {
+body {
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
