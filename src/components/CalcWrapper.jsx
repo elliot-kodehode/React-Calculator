@@ -9,7 +9,7 @@ import { evaluate } from "mathjs";
 export default function Calc() {
   const [currentCalc, setCurrentCalc] = useState(``);
   const [result, setResult] = useState(``);
-  const operators = ["+", "-", "/", "=", "*"];
+  const operators = ["+", "-", "/", "*"];
 
   const handleChange = (value) => {
     
@@ -36,36 +36,47 @@ export default function Calc() {
         currentCalc.endsWith("+") || 
         currentCalc.endsWith("*") || 
         currentCalc.endsWith("-") || 
-        currentCalc.endsWith("/") 
-        // currentCalc.endsWith(".")
+        currentCalc.endsWith("/") ||
+        currentCalc.endsWith(".")
         ) {
-          setCurrentCalc(currentCalc)
-          setResult(result)
         } else {
-          setCurrentCalc(result)
-          setResult("")
+          setCurrentCalc("")
+          // setResult(result)
         }
+
+    } else if (currentCalc.includes(".") && value === ".") {
+      setCurrentCalc(currentCalc)
+      setResult(result)
 
     } else {
       // Changes result to blank if an operator is added, and adds it with spacing to the calc
-      if (operators.includes(value)) {
-        if (currentCalc === "" ||
-        currentCalc.endsWith("+") || 
+      if (operators.includes(value) && currentCalc !== "") {
+        if (currentCalc.endsWith("+") || 
         currentCalc.endsWith("*") || 
         currentCalc.endsWith("-") || 
         currentCalc.endsWith("/") ||
         currentCalc.endsWith(".") 
         ) {
-          setCurrentCalc(currentCalc)
+          // setCurrentCalc(currentCalc)
         } else {
           setCurrentCalc(currentCalc + value);
           setResult("");
         }
+        
 
+      }
         // Adds number or operator if there isn't an operator before
-      } else {
-        setCurrentCalc(currentCalc + value);
-        setResult(evaluate(currentCalc + value));
+      else {
+          if (result !== "" && currentCalc === "") {
+            if (operators.includes(value)) {
+              setCurrentCalc(prevState => result + value)
+            } else {
+              setCurrentCalc(value)
+              setResult(value)
+            }
+          } else {
+          setCurrentCalc(currentCalc + value);
+          setResult(evaluate(currentCalc + value))} 
       }
     }
 };
