@@ -1,6 +1,5 @@
 /** @format */
 
-import Header from "./Header.jsx";
 import Display from "./Display.jsx";
 import Button from "./Button.jsx";
 import { useState } from "react";
@@ -18,7 +17,7 @@ export default function Calc() {
       setResult("");
       
     } else if (value === "DEL") {
-      setCurrentCalc(currentCalc.trim().slice(0, -1).trim());
+      setCurrentCalc(currentCalc.slice(0, -1));
       // removes result if the equation ends on an operator or is empty
       if (
         currentCalc.slice(0, -1).endsWith("+") || 
@@ -83,7 +82,6 @@ export default function Calc() {
 
   return (
     <>
-      <Header></Header>
       <Display
         currentCalc={currentCalc}
         result={result}
