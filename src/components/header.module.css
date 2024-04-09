@@ -60,6 +60,7 @@ h2 {
     height: 14px;
     border-radius: 10px;
     background-color: var(--btn-color);
+    cursor: pointer;
 }
 
 label {
