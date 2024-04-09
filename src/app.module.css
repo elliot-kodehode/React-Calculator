@@ -1,3 +1,100 @@
+:root {
+    --background-color: #4a5774;
+
+/* Button Colors */
+    --num-color: rgb(41, 40, 40);
+    --equals-btn-color: #d64e39;
+    --del-res-btn-color: #8284c1;
+    --default-btn-color: rgb(244, 240, 228);
+    --equals-text-color: white;
+    --container-color: #2c2c4d;
+
+/* Header Colors */
+    --text-color: white;
+    --btn-color: #d64e39;
+    --btn-wrapper: #2c2c4d;
+
+/* Display Color */
+    --display-color: #1c1c34;
+    --result-color: rgb(241, 241, 241);
+    --current-calc-color: rgb(194, 194, 194);
+
+/* Hover Colors */
+    --default-hover: rgb(249, 248, 245);
+    --del-res-hover: #8d8fca;
+    --equals-hover: #da5844;
+}
+
+[data-theme="2"] {
+    --background-color: #e7e7e7;
+
+/* Button Colors */
+    --num-color: rgb(49, 49, 49);
+    --equals-btn-color: rgb(227, 100, 15);
+    --del-res-btn-color: #319485;
+    --default-btn-color: rgb(236, 236, 236);
+    --equals-text-color: white;
+    --container-color: #cccccc;
+
+/* Header Colors */
+    --text-color: rgb(49, 49, 49);
+    --btn-color: rgb(227, 100, 15);
+    --btn-wrapper: #cccccc;
+
+/* Display Color */
+    --display-color: #f1f0f0;
+    --result-color: rgb(33, 33, 33);
+    --current-calc-color: rgb(77, 77, 77);
+
+/* Hover Colors */
+    --default-hover: rgb(236, 236, 236);
+    --del-res-hover: #429d8f;
+    --equals-hover: rgb(230, 108, 27);
+}
+
+[data-theme="3"] {
+    --background-color: #130526;
+
+/* Button Colors */
+    --num-color: yellow;
+    --equals-btn-color: rgb(94, 234, 252);
+    --default-btn-color: rgb(76, 3, 92);
+    --del-res-btn-color: #75048f;
+    --equals-text-color: rgb(29, 29, 29);
+    --container-color: #280241;
+
+/* Header Colors */
+    --text-color: yellow;
+    --btn-color: rgb(94, 234, 252);
+    --btn-wrapper: #280241;
+
+/* Display Color */
+    --display-color: #220337;
+    --result-color: yellow;
+    --current-calc-color: rgb(179, 179, 73);
+
+/* Hover Colors */
+    --default-hover: rgb(89, 9, 107);
+    --del-res-hover: #7e0c97;
+    --equals-hover: rgb(124, 238, 253);
+}
+
+* {
+    font-family: "Roboto Light", sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.mainApp {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+}
 
 Calc {
     align-items: center;

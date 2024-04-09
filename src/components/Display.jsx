@@ -1,8 +1,6 @@
 /** @format */
 
 import styles from "./display.module.css";
-import Button from "./Button.jsx";
-import { useState } from "react";
 
 export default function Display({ currentCalc, result }) {
   return (

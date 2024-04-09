@@ -1,4 +1,5 @@
 
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -6,7 +7,7 @@
 }
 h1 {
     font-size: 24px;
-    color: white;
+    color: var(--text-color);
     align-self: end;
 }
 
@@ -20,7 +21,7 @@ h2 {
     letter-spacing: 1px;
     align-self: end;
     font-weight: 700;
-    color: white;
+    color: var(--text-color);
     padding-bottom: 4px;
 }
 
@@ -40,24 +41,25 @@ h2 {
     }
 
 .themeList * {
-    color: white;
+    color: var(--text-color);
     font-weight: 600;
     font-size: 14px;
 }
 
 .themeBtnWrapper {
     display: flex;
-    background-color: #1c1c31;
+    background-color: var(--btn-wrapper);
     width: 100%;
     padding: 3px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .themeBtn {
     width: 14px;
     height: 14px;
     border-radius: 10px;
-    background-color: rgb(255, 190, 121);
+    background-color: var(--btn-color);
 }
 
 label {

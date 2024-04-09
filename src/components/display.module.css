@@ -6,10 +6,10 @@
     height: 90px;
     max-width: 330px;
     padding: 10px;
-    background-color: #1c1c31;
+    background-color: var(--display-color);
     border-radius: 8px;
     margin: 0 0 20px 0;
-    /* justify-content: center; */
+    overflow: hidden;
 }
 
 .display * {
@@ -19,13 +19,13 @@
 }
 
 .currentCalc {
-    color: rgb(194, 194, 194);
+    color: var(--current-calc-color);
     font-size: 22px;
     font-weight: 300;
 }
 
 .currentResult{
-    color: rgb(241, 241, 241);
+    color: var(--result-color);
     font-size: 38px;
     font-weight: 600;
 }
