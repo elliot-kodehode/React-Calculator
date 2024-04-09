@@ -1,5 +1,5 @@
 /** @format */
-import styles from "./app.module.css"
+import "./app.css"
 import Calc from "./components/CalcWrapper.jsx";
 import Header from "./components/Header.jsx"
 import { useEffect, useState } from "react";
