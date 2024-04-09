@@ -1,11 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/j4ixJ04e)
-# React Project
-
-## Calculator
-
-### In this project, your task is to create a **Calculator** using React!
-
-I have included a folder, "./material", where you can find images of the design we're aiming for, and a style guide to help you achieve it.
+React project: Calculator app
 
 Requirements:
 
@@ -18,9 +11,3 @@ Requirements:
 Stretch goal (do if you have time):
 
 - Working theme switch that switches between the themes in "./material/design"
-
-Remember to use useState and props where necessary. If you get stuck, feel free to ask for help from me or your fellow students.
-
-Like I mentioned during last React lecture, you will have **two** weeks to complete this project.
-
-## Good luck!
